@@ -1,0 +1,83 @@
+{% extends "Base.html" %}
+{% load i18n %}
+{% block content %}
+
+
+    <div>
+<<<<<<< HEAD
+=======
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+>>>>>>> origin/dev
+        <form id="form" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><u> Add Activity Detail</u></h2>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Activity Name :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.activity_name }}
+                    {{ form.activity_id }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Activity Type :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.activity_type }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Is Active :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.is_active }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+
+            <div class="row margin-top">
+
+                <div class="col-md-4">
+                    <input id="btnSave" type="submit" value="Save" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script language="JavaScript">
+
+    </script>
+
+{% endblock %}

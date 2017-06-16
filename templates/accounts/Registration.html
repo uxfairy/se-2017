@@ -1,0 +1,27 @@
+{% extends "Base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+{#<link href="{% static 'css/registrationpage.css' %}" rel="stylesheet" media="screen">#}
+
+
+<div>
+<h1>Registration page</h1>
+
+    <form action="{ % url 'Registration' %}" method="post">
+          {% csrf_token %}
+        Username: <input type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/></br>
+        Password:<input type="password" name="password"required/></br>
+        Re-enter Password:<input type="password" name="upassword"required/></br>
+
+        As a:<select name="as">
+                <option value="1">Club </option>
+                <option value="2">Participant</option>
+            </select>
+</br>
+        <input type="submit" value="Register"/>
+
+    </form>
+
+</div>
+{% endblock %}

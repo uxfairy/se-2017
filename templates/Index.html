@@ -1,0 +1,16 @@
+{% extends "Base.html" %}
+{% load i18n %}
+{% block content %}
+
+
+<div class="form">
+    <h1>Welcome to Swimming Project</h1>
+        <form method="get" action="/Login">
+            <button type="submit">Login</button>
+        </form>
+
+        <form method="get" action="/Registration">
+            <button type="submit">Registration</button>
+        </form>
+
+{% endblock %}

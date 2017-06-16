@@ -1,0 +1,72 @@
+{% extends "Base.html" %}
+{% load i18n %}
+{% block content %}
+
+
+    <div>
+        <form id="form" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><u> Add Package Detail</u></h2>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Package Name :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.package_name }}
+                    {{ form.package_id }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Participant Gender :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.gender }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-3">
+                    <label>Participant Birth Year :</label>
+                </div>
+                <div class="col-md-5">
+                    {{ form.birth_year }}
+                </div>
+                <div class="col-md-1">
+                    <span style="color:red;">*</span>
+                </div>
+            </div>
+
+
+            <div class="row margin-top">
+
+                <div class="col-md-4">
+                    <input id="btnSave" type="submit" value="Save" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script language="JavaScript">
+
+    </script>
+
+{% endblock %}

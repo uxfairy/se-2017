@@ -1,0 +1,57 @@
+{% extends "Base.html" %}
+{% load i18n %}
+{% block content %}
+
+    <div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Add New ActivityType">
+        </form>
+    </div>
+
+    <div class="row margin-top">
+        <div class="col-md-12">
+            <table class="datatable">
+                <thead>
+                <th>Activity ID</th>
+                <th>ActivityType</th>
+                <th>Update</th>
+                <th>Delete</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+    <script language="JavaScript">
+
+        $(document).ready(function () {
+
+            var oTable = $('.datatable').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "{% url 'activity_type_gridview' %}"
+            });
+
+        });
+
+        function deleteActivityType(id) {
+            if (confirm("Really delete activity type?")) {
+                redirectTo("admin/ActivityType/Delete/"+id);
+            }
+        }
+
+        function redirectTo(URL) {
+            window.location.href = '/' + URL;
+        }
+
+    </script>
+{% endblock %}
